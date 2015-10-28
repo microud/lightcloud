@@ -15,8 +15,7 @@
         {{/if}}
         <div class="post-shares">
           <ul class="post-share-ul">
-            {{! 你可以吧xknow.net改为你自己的域名从而实现对自己文章的分享 }}
-            <a href="http://v.t.sina.com.cn/share/share.php?url=http://xknow.net{{url}}&amp;title={{title}}：{{excerpt characters="60"}}..." title="分享到新浪微博" target="_blank">
+            <a href="http://v.t.sina.com.cn/share/share.php?url={{@blog.url}}{{url}}&amp;title={{title}}：{{excerpt characters="60"}}..." title="分享到新浪微博" target="_blank">
               <li class="post-share-unit no-point-li">
                 <i class="iconfont icon-xinlangweibo"></i>
               </li>
