@@ -1,0 +1,34 @@
+{{!这是标签云的样式，，需要标签云模块的支持 }}
+
+<ul class="sidebar-tags-ul">
+	{{#foreach tags}}
+    <li class="no-point-li sidebar-tag-unit"><a href="{{url}}" class="sidebar-tag-item">{{name}} ({{post_count}})</a></li>
+	{{/foreach}}
+</ul>
+<script type="text/javascript">
+    var colorList = new Array("#1E90FF", "#FF7F50", "#8A2BE2", "#DAA520", "#ADD8E6", "#CC3366", "#66FF33", "#00CCCC", "#4B0082");
+    window.onload=function(){
+      var aObj=document.getElementsByClassName("sidebar-tag-item");
+      function rand(num){
+       return parseInt(Math.random()*num+1);
+      }
+      function randomcolor(){
+        var str=Math.ceil(Math.random()*16777215).toString(16);
+
+        if(str.length<6){
+          str="0"+str;
+        }
+        return str;
+      }
+      console.log(rand(5));
+      for( len=aObj.length,i=len;i--;){
+        //aObj[i].style.zIndex=rand(5);
+        //aObj[i].style.color="#"+randomcolor();
+        var fontsize = (rand(12)+12)+'px';
+        console.log(fontsize);
+        aObj[i].style.fontSize=fontsize;
+        aObj[i].style.color=colorList[rand(9)];
+console.log(rand(9));
+      }
+    }
+</script>

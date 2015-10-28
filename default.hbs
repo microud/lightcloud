@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}" />
+    <link rel="stylesheet" href="{{asset "css/amazeui.min.css"}}" />
+    <link rel="stylesheet" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" href="{{asset "css/iconfont.css"}}">
+
+    {{ghost_head}}
+</head>
+
+<body class="{{body_class}} nav-closed">
+  <div class="site-header">
+    <div class="am-u-md-12">
+      {{#if @blog.cover}}
+        <div class="site-main-head"><a class="site-cover" href="{{@blog.url}}"><img src="{{@blog.cover}}" alt="Blog Cover" /></a></div>
+      {{else}}
+        <div class="site-main-head"><a class="site-title" href="{{@blog.url}}">{{@blog.title}}</a></div>
+      {{/if}}
+      <div class="site-nav">
+        {{navigation}}
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="site-content am-u-md-8">
+      {{{body}}}
+    </div>
+    <div class="site-sidebar am-u-md-4">
+      {{> sidebar}}
+    </div>
+  </div>
+  <div class="site-footer">
+    <span class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</span> |
+    <span class="poweredby">Proudly published with <a href="https://ghost.org" target="_blank">Ghost</a></span><span>{{ghost_foot}}</span>
+  </div>
+
+
+  <script type="text/javascript" src="{{asset "js/jquery.min.js"}}"></script>
+  <!--返回顶部的插件及使用-->
+  <script type="text/javascript" src="{{asset "js/jquery.goup.min.js"}}"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $.goup({
+        trigger: 50,
+        bottomOffset: 40,
+        locationOffset: 10,
+        title: 'Top',
+        titleAsText: false,
+        containerSize: 30,
+        containerColor: "#666",
+        containerRadius: 5
+      });
+    });
+  </script>
+</body>
+</html>

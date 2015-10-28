@@ -1,0 +1,71 @@
+{{!< default}}
+
+{{#post}}
+  <div class="post-single">
+    <div class="post-title"><h1>{{title}}</h1></div>
+    <div class="post-meta">
+      <span class="author-date">By {{author.name}} • {{date format='MMM DD,YYYY'}}</span>
+    </div>
+    <div class="post-content">{{content}}</div>
+
+    <div class="post-tagshare">
+      {{#if tags}}
+        <div class="post-tags"><i class="iconfont icon-biaoqian"></i>&nbsp;{{tags}}</div>
+      {{/if}}
+      <div class="post-shares">
+        <ul class="post-share-ul">
+          {{! 你可以吧xknow.net改为你自己的域名从而实现对自己文章的分享 }}
+          <a href="http://v.t.sina.com.cn/share/share.php?url=http://xknow.net{{url}}&amp;title={{title}}：{{excerpt characters="60"}}..." title="分享到新浪微博" target="_blank"><li class="post-share-unit no-point-li"><i class="iconfont icon-xinlangweibo"></i></li></a>
+          <a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xknow.net{{url}}" title="分享到QQ空间" target="_blank"><li class="post-share-unit no-point-li"><i class="iconfont icon-qqkongjian"></i></li></a>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="post-comments">
+
+    {{! fixed format and don't touch it.}}
+    <div class="ds-thread" data-thread-key="{{id}}" data-title="{{title}}" data-url="{{url absolute="true"}}"></div>
+
+    {{! 把你自己的多说粘贴到这里}}
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xknow"};
+	   (function() {
+		     var ds = document.createElement('script');
+		     ds.type = 'text/javascript';ds.async = true;
+		     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		     ds.charset = 'UTF-8';
+		     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+  </div>
+{{/post}}
+
+
+<!--通过ajax在非index页面获取最近文章列表-->
+<script type="text/javascript">
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            var wrapper = document.createElement('div');
+            wrapper.innerHTML = xmlhttp.responseText;
+            var wrapperarray = wrapper.getElementsByClassName('sidebar-latest-a');
+            console.log(wrapperarray);
+            for(var i = 0; i < wrapperarray.length; i++){
+                document.getElementsByClassName('sidebar-latest-ul')[0].innerHTML += '<li class="sidebar-latest-unit no-point-li"><a href="' + wrapperarray[i] + '">' + wrapperarray[i].innerHTML + '</a></li><hr />';
+            }
+            //delete wrapper;
+        }
+    }
+    xmlhttp.open("GET","/",true);
+    xmlhttp.send();
+</script>

@@ -1,0 +1,7 @@
+<ul class="site-nav-ul">
+  {{#foreach navigation}}
+    <li class="no-point-li nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation">
+      <a href="{{url absolute="true"}}">{{label}}</a>
+    </li>
+  {{/foreach}}
+</ul>

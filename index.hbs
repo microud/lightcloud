@@ -1,0 +1,37 @@
+{{!< default}}
+<div class="index-posts">
+  {{#foreach posts}}
+    <div class = "index-post-list">
+      <div class = "post-title">
+        <h1><a class="" href="{{url}}">{{{title}}}</a></h1>
+      </div>
+      <div class="post-meta">By {{author.name}} • {{date format='MMM DD,YYYY'}}</div>
+      <div class = "index-post-excerpt">
+        {{content words="32"}} <a href="{{url}}" class="align-center">----------Read more----------</a>
+      </div>
+      <div class="post-tagshare">
+        {{#if tags}}
+          <div class="post-tags"><i class="iconfont icon-biaoqian"></i>&nbsp;{{tags}}</div>
+        {{/if}}
+        <div class="post-shares">
+          <ul class="post-share-ul">
+            {{! 你可以吧xknow.net改为你自己的域名从而实现对自己文章的分享 }}
+            <a href="http://v.t.sina.com.cn/share/share.php?url=http://xknow.net{{url}}&amp;title={{title}}：{{excerpt characters="60"}}..." title="分享到新浪微博" target="_blank">
+              <li class="post-share-unit no-point-li">
+                <i class="iconfont icon-xinlangweibo"></i>
+              </li>
+            </a>
+            <a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xknow.net{{url}}" title="分享到QQ空间" target="_blank">
+              <li class="post-share-unit no-point-li">
+                <i class="iconfont icon-qqkongjian"></i>
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  {{/foreach}}
+  <div class="c-pagination">
+    {{pagination}}
+  </div>
+</div>

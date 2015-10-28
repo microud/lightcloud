@@ -1,0 +1,11 @@
+<div class="pagination">
+<ul data-am-widget="pagination" class="am-pagination am-pagination-default">
+    {{#if prev}}
+        <li class="am-pagination-prev pagination-unit"><a href="{{page_url prev}}">上一页</a></li>
+    {{/if}}
+    <li class="pagination-unit"><a>第{{page}}页 / 共{{pages}}页</a></li>
+    {{#if next}}
+        <li class="pagination-unit am-pagination-next"><a href="{{page_url next}}">下一页</a></li>
+    {{/if}}
+</ul>
+</div>

@@ -1,0 +1,52 @@
+<!--关注模块，可在此添加或修改链接或者目标网站图标等，内置图标字体见iconfont.css。如果有更多需求可以上iconfont.cn自行选择替换-->
+<div class="sidebar-unit sidebar-follows">
+  <div class="sidebar-title"><h2>关注</h2></div>
+  <div class="sidebar-follows-list">
+    <ul class="sidebar-follow-ul">
+
+      {{!修改下列链接即可指向自己的公众账号 }}
+      <a href="/rss/" title="订阅更新"><li class="sidebar-follow-unit no-point-li"><i class="icon-RSS iconfont"></i></li></a>
+      <a href="http://weibo.com/microud" title="关注微博"><li class="sidebar-follow-unit no-point-li"><i class="icon-xinlangweibo iconfont"></i></li></a>
+      <a href="https://github.com/microud" title="Github"><li class="sidebar-follow-unit no-point-li"><i class="icon-github iconfont"></i></li></a>
+      <a href="https://twitter.com/microud1631" title="twitter"><li class="sidebar-follow-unit no-point-li"><i class="icon-twitter iconfont"></i></li></a>
+      <a href="mailto://gmicroud@gmail.com" title="联系博主"><li class="sidebar-follow-unit no-point-li"><i class="icon-youjian iconfont"></i></li></a>
+    </ul>
+  </div>
+</div>
+
+{{!最近文章栏，内置helper只能在index页面使用，post等页面通过js获取index的列表。若不需要可删除 }}
+<div class="sidebar-unit sidebar-latests">
+  <div class="sidebar-title"><h2>近期文章</h2></div>
+  <div class="latest-post-list">
+      <ul class="sidebar-latest-ul">
+        {{#foreach posts}}
+            <li class="sidebar-latest-unit no-point-li"><a class="sidebar-latest-a" href="{{url}}">{{title}}</a></li>
+            <hr />
+        {{/foreach}}
+
+    </ul>
+  </div>
+</div>
+
+{{!标签云模块，需要相应的后台模块支持，如不需要可以去掉}}
+<div class="sidebar-unit sidebar-tags">
+  <div class="sidebar-title"><h2>标签云</h2></div>
+  <div class="sidebar-tags-cloud">
+    {{tag_cloud limit="all"}}
+  </div>
+</div>
+
+
+{{!友情链接模块，可以在这里添加链接等，如不需要可以删除}}
+<div class="sidebar-unit sidebar-links">
+  <div class="sidebar-title"><h2>友情链接</h2></div>
+  <div class="sidebar-link-list">
+    <ul class="sidebar-link-ul">
+
+      {{! 如果想要添加更多友情链接，可以复制下面这一行然后粘贴并修改链接信息等即可. }}
+      <li class="sidebar-link-unit no-point-li"><a class="sidebar-link-a" href="/" target="_blank">认知</a></li>
+
+
+    </ul>
+  </div>
+</div>
