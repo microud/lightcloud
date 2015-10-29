@@ -12,17 +12,6 @@ body {
 .index-post-excerpt {
   margin: 20px 0 20px 0;
 }
-.read-more {
-  border: 1px solid #ccc;
-  text-align: center;
-  height: 40px;
-  margin-top: 20px;
-  line-height: 40px;
-  width: 120px;
-  border-radius: 5px;
-  padding: 0 10px 0 10px;
-}
-
 
 /*End Index*/
 
@@ -136,19 +125,14 @@ body {
 }
 
 .sidebar-tag-unit {
-/*  border: 1px solid #ccc;*/
+  /*border: 1px solid #ccc; */
   display: inline-block;
-  /*margin: 1px 1px 1px 1px;
-  padding: 1px 1px 1px 1px;*/
+  margin: 3px 3px 3px 3px;
+  padding: 1px 2px 1px 2px;
 }
 
 .sidebar-tags-ul {
   padding-left: 0px;
-}
-
-.sidebar-recommends {
-  
-  padding-bottom: 20px;
 }
 
 /*End Sidebar*/
@@ -323,7 +307,7 @@ embed {
 /*Extra Style*/
 .align-center {
   text-align: center;
-  color: #666;
+  color: #bbbbbb;
 }
 .align-center:hover {
   color: #aaaaaa;
@@ -351,4 +335,3 @@ embed {
 
 
 /*End Pagination*?
-

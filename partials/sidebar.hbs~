@@ -1,4 +1,4 @@
-{{!关注模块，可在此添加或修改链接或者目标网站图标等，内置图标字体见iconfont.css。如果有更多需求可以上iconfont.cn自行选择替换}}
+<!--关注模块，可在此添加或修改链接或者目标网站图标等，内置图标字体见iconfont.css。如果有更多需求可以上iconfont.cn自行选择替换-->
 <div class="sidebar-unit sidebar-follows">
   <div class="sidebar-title"><h2>关注</h2></div>
   <div class="sidebar-follows-list">
